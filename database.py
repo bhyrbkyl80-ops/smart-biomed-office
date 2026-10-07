@@ -6,7 +6,8 @@ DATABASE_NAME = "services_bot.db"
 def get_connection():
     return sqlite3.connect(DATABASE_NAME)
 
-  def init_database():
+
+def init_database():
     connection = get_connection()
     cursor = connection.cursor()
 
@@ -56,9 +57,9 @@ def get_connection():
     """)
 
     connection.commit()
-    
     connection.close()
-    
+
+
 def seed_services():
     connection = get_connection()
     cursor = connection.cursor()
@@ -80,6 +81,7 @@ def seed_services():
 
     connection.commit()
     connection.close()
+
 
 if __name__ == "__main__":
     init_database()
