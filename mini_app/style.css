@@ -1,0 +1,365 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f4f8fb;
+    --card: #ffffff;
+    --primary: #087f8c;
+    --primary-dark: #05636e;
+    --secondary: #dff5f4;
+    --text: #102a43;
+    --muted: #6b7c93;
+    --border: #e5edf2;
+    --shadow: 0 10px 30px rgba(16, 42, 67, 0.08);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(8, 127, 140, 0.15), transparent 30%),
+        radial-gradient(circle at 0% 40%, rgba(64, 180, 176, 0.10), transparent 25%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.app {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 22px 18px 100px;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary), #35b8b0);
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    box-shadow: 0 8px 20px rgba(8, 127, 140, 0.25);
+}
+
+.brand h1 {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.brand p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.notification {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.8);
+    font-size: 18px;
+}
+
+/* Welcome */
+
+.welcome {
+    position: relative;
+    overflow: hidden;
+    min-height: 185px;
+    padding: 24px;
+    border-radius: 28px;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.22), transparent 25%),
+        linear-gradient(135deg, #05636e, #087f8c 55%, #39aaa3);
+    box-shadow: 0 18px 40px rgba(8, 127, 140, 0.22);
+    margin-bottom: 16px;
+}
+
+.welcome::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    left: -70px;
+    bottom: -90px;
+}
+
+.welcome span {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.welcome h2 {
+    margin-top: 10px;
+    font-size: 27px;
+    line-height: 1.4;
+}
+
+.welcome p {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.82;
+}
+
+.medical-icon {
+    position: absolute;
+    left: 25px;
+    bottom: 20px;
+    font-size: 62px;
+    opacity: 0.18;
+}
+
+/* Quick Action */
+
+.quick-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-radius: 22px;
+    background: white;
+    box-shadow: var(--shadow);
+    margin-bottom: 26px;
+    border: 1px solid var(--border);
+}
+
+.quick-action span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.quick-action h3 {
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.quick-action button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 15px;
+    background: var(--primary);
+    color: white;
+    font-size: 25px;
+}
+
+/* Sections */
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+
+.section-title h2 {
+    font-size: 19px;
+}
+
+.section-title span {
+    font-size: 12px;
+    color: var(--primary);
+}
+
+/* Services */
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.service-card {
+    padding: 17px;
+    min-height: 145px;
+    border-radius: 22px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.service-card:active {
+    transform: scale(0.97);
+}
+
+.service-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: var(--secondary);
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.service-card h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.service-card p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Inventory */
+
+.inventory {
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    padding: 22px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #102a43, #174d63);
+    color: white;
+    margin-bottom: 27px;
+    box-shadow: 0 16px 35px rgba(16, 42, 67, 0.18);
+}
+
+.inventory-content {
+    position: relative;
+    z-index: 2;
+}
+
+.inventory-content span {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.inventory-content h2 {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 9px 0 15px;
+}
+
+.inventory-content button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 12px;
+    background: white;
+    color: var(--text);
+    font-size: 12px;
+}
+
+.inventory-image {
+    position: absolute;
+    left: 18px;
+    bottom: 15px;
+    font-size: 72px;
+    opacity: 0.15;
+}
+
+/* Empty state */
+
+.empty-state {
+    text-align: center;
+    padding: 30px 15px;
+    border-radius: 22px;
+    background: white;
+    border: 1px dashed #ccd8e0;
+}
+
+.empty-state div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Bottom Navigation */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 28px);
+    max-width: 490px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 9px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 35px rgba(16, 42, 67, 0.15);
+}
+
+.bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 2px;
+    color: var(--muted);
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.bottom-nav a span {
+    font-size: 19px;
+}
+
+.bottom-nav .active {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 360px) {
+
+    .app {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+    }
+
+    .service-card {
+        padding: 14px;
+    }
+}
